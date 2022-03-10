@@ -1,0 +1,7 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=stiotanalysis;AccountKey=RhZwTZBhM+H3iMNB5+jxCI9J0NasfUAfa+Hlu7JiQOuP84a9lzWkzM+kmeAdvzqBGuzqMqkh2/InJGCbsVujhQ==;BlobEndpoint=https://stiotanalysis.blob.core.windows.net/;TableEndpoint=https://stiotanalysis.table.core.windows.net/;QueueEndpoint=https://stiotanalysis.queue.core.windows.net/;FileEndpoint=https://stiotanalysis.file.core.windows.net/",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+    }
+}
