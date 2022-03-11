@@ -34,7 +34,7 @@ namespace TomatoAPI
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.BadRequest, contentType: "text/plain", bodyType: typeof(string), Description = "One or more of the parameters had the wrong format")]
         public async Task<IActionResult> WaterPlant(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "events/water")] HttpRequest req,
-            [Table("water")] TableClient tableClient)
+            [Table("water", Connection = "DataStorageEndpoint")] TableClient tableClient)
         {           
             string mililiter = req.Query["mililiter"];
             string timeStamp = req.Query["timeStamp"];
@@ -84,7 +84,7 @@ namespace TomatoAPI
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "text/plain", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> HarvestTomatoes(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "events/harvest")] HttpRequest req,
-            [Table("harvest")] TableClient tableClient)
+            [Table("harvest", Connection = "DataStorageEndpoint")] TableClient tableClient)
         {
             string plantId = req.Query["plantId"];
             string weight = req.Query["weight"];

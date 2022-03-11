@@ -39,7 +39,7 @@ namespace TomatoAPI.Controllers
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(string), Description = "The OK response")]
         public async Task<IActionResult> GetData(
            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "telemetry/{plantId}")] HttpRequest req, string plantId,
-           [Table("telemetry")] TableClient tableClient)
+           [Table("telemetry", Connection = "DataStorageEndpoint")] TableClient tableClient)
         {
             string queryFilter;
             IEnumerable<TableData> queryResult;
