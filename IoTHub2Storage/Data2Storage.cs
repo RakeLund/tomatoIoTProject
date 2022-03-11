@@ -12,7 +12,7 @@ namespace Storage
     public class Data2Storage
     {
         [FunctionName("Data2Storage")]
-        [return: Table("tomatoes")]
+        [return: Table("telemetry", Connection = "DataStorageEndpoint")]
         public static TableData Run([IoTHubTrigger("messages/events", Connection = "IoTHubEndpoint")] EventData message, ILogger log)
         {
             log.LogInformation($"C# IoT Hub trigger function processed a message: {Encoding.UTF8.GetString(message.Body.Array)}");
